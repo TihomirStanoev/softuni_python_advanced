@@ -28,3 +28,26 @@ class MatrixContentError(Exception):
 
 class MatrixSizeError(Exception):
     pass
+
+
+# 05. Online Banking
+class MoneyNotEnoughError(Exception):
+    pass
+
+class PINCodeError(Exception):
+    pass
+
+class UnderageTransactionError(Exception):
+    pass
+
+class MoneyIsNegativeError(Exception):
+    pass
+
+
+
+
+
+
+
+
+
