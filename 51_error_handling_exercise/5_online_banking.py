@@ -1,28 +1,28 @@
 from custom_exceptions import MoneyNotEnoughError, PINCodeError, UnderageTransactionError,MoneyIsNegativeError
 
 
-def money_validation(acc_balance, sent_money):
+def money_validation(acc_balance: float, sent_money: float) -> bool:
     if sent_money > acc_balance:
         raise MoneyNotEnoughError('Insufficient funds for the requested transaction')
     return True
 
-def pin_validation(acc_pin, given_pin):
+def pin_validation(acc_pin: str, given_pin: str) -> bool:
     if acc_pin != given_pin:
         raise PINCodeError('Invalid PIN code')
     return True
 
-def age_validation(acc_age, adult):
+def age_validation(acc_age:int, adult:int) -> bool:
     if acc_age < adult:
         raise UnderageTransactionError('You must be 18 years or older to perform online transactions')
     return True
 
-def is_negative(receive):
+def is_negative(receive:float) -> bool:
     if receive < 0:
         raise MoneyIsNegativeError('The amount of money cannot be a negative number')
     return True
 
 
-def send_money(acc_balance, money_am):
+def send_money(acc_balance: float, money_am: float) ->float:
     new_balance = acc_balance - money_am
 
     print(f'Successfully sent {money_am:.2f} money to a friend')
@@ -30,7 +30,7 @@ def send_money(acc_balance, money_am):
 
     return new_balance
 
-def receive_money(acc_balance, received_money, invest):
+def receive_money(acc_balance:float, received_money:float, invest:float)->float:
     money_to_receive = received_money * invest
     new_balance = acc_balance + money_to_receive
 
