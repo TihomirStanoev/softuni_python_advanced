@@ -1,3 +1,5 @@
-x = [1,2,3,4,5]
 
-print(x[2:])
+
+
+f = list(map(int, input().split()))
+print(f)
