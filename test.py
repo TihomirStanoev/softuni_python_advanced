@@ -1,5 +1,9 @@
 
+def add_list(lst):
+    lst.append(5)
 
+some_list = []
 
-f = list(map(int, input().split()))
-print(f)
+print(some_list)
+add_list(some_list)
+print(some_list)
